@@ -13,10 +13,14 @@ import android.widget.CompoundButton;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import static com.example.a1208022380.audbucketlist.LoginActivity.mDatabaseReference;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import static com.example.a1208022380.audbucketlist.MainActivity.UserID;
 
 /**
  * Created by 1208022380 on 3/10/2018.
@@ -108,6 +112,8 @@ public class MyCustomAdapter extends BaseAdapter implements Filterable {
     public View getView(int position, View convertView, ViewGroup parent) {
          ViewHolder view = null;
         LayoutInflater inflator = ((Activity) mContext).getLayoutInflater();
+
+
         if(view ==null){
             view = new ViewHolder();
             convertView=inflator.inflate(R.layout.myadapter,null);
@@ -115,6 +121,7 @@ public class MyCustomAdapter extends BaseAdapter implements Filterable {
             view.contenttext= convertView.findViewById(R.id.adapterText2);
             view.tick=convertView.findViewById(R.id.adapterCHeck);
             final TextView n = view.nametext;
+            final CheckBox c = view.tick;
             view.tick.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -127,14 +134,23 @@ public class MyCustomAdapter extends BaseAdapter implements Filterable {
                     }
                 }
             });
+            view.tick.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = (int) v.getTag();
+                    mylist.get(pos).setChecked(c.isChecked());
+                    mDatabaseReference.child(UserID).child("Tasks").child(mylist.get(pos).getPushKey()).setValue(mylist.get(pos));
+                }
+            });
 
             convertView.setTag(view);
         }else{
             view = (ViewHolder) convertView.getTag();
         }
+        final DateFormat format = DateFormat.getDateInstance();
         view.tick.setTag(position);
         view.nametext.setText(""+ mylist.get(position).getTitle());
-        view.contenttext.setText(""+mylist.get(position).getContent());
+        view.contenttext.setText(""+format.format(mylist.get(position).getDate()));
         view.tick.setChecked(mylist.get(position).isChecked());
         return convertView;
     }

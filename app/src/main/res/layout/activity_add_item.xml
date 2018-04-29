@@ -4,34 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context="com.example.a1208022380.audbucketlist.AddItemActivity">
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
 
     <EditText
         android:id="@+id/editText"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ic_create_black_24dp"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:textStyle="italic"
+        android:layout_marginTop="77dp"
         android:ems="10"
         android:hint="The Task... "
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="105dp"
-        android:textStyle="italic"
+        android:drawableLeft="@drawable/ic_description_black_24dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
         android:ems="10"
         android:hint="The Description..."
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textStyle="italic" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        tools:context ="com.example.a1208022380.audbucketlist.AddItemActivity"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_date_range_black_24dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="203dp"
+        android:ems="10"
+        android:hint="Due Date..."
+        android:inputType="date" />
 
 
 </RelativeLayout>

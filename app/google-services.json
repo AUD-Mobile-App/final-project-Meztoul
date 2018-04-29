@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "663884200725",
+    "firebase_url": "https://audbucketlist.firebaseio.com",
+    "project_id": "audbucketlist",
+    "storage_bucket": "audbucketlist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663884200725:android:e6eaa4b97a24624b",
+        "android_client_info": {
+          "package_name": "com.example.a1208022380.audbucketlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663884200725-9f17r810fccb9f8nlth84rl5mvln08hr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG1eYK0Cw7vIre2f99MhywSv418xFa6sM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

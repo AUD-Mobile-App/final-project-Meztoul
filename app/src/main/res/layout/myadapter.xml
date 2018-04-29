@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
 
     <CheckBox
         android:id="@+id/adapterCHeck"
@@ -13,23 +14,31 @@
         android:layout_alignBottom="@+id/adapterText1"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:buttonTint="@color/colorPrimary"/>
+        android:buttonTint="@color/background_color"/>
 
     <TextView
         android:id="@+id/adapterText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/adapterCHeck"
-
-         />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textColor="@color/background_color"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/adapterText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/background_color"
         android:layout_alignParentTop="true"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:focusable="false"
         android:layout_marginLeft="10dp"
         android:textSize="25dp"
         />
